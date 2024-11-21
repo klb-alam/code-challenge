@@ -20,6 +20,8 @@ jobs:
         run: |
           pip3 install -r pr-review-agent/requirements.txt
 
+      - name: List Action Directory
+        run: ls 
       - name: Run PR Agent Review
         working-directory: pr-review-agent
         run: python3 pr-review-agent/main.py
