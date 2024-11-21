@@ -11,8 +11,18 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Run PR Agent Review
-        uses: klb-alam/pr-review-agent@main # Replace with your username and branch
+      - name: Set Up Python
+        uses: actions/setup-python@v4
         with:
-          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          pip3 install -r pr-review-agent/requirements.txt
+
+      - name: Run PR Agent Review
+        working-directory: pr-review-agent
+        run: python3 main.py
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
