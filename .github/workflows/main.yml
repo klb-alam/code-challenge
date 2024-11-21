@@ -22,7 +22,7 @@ jobs:
 
       - name: Run PR Agent Review
         working-directory: pr-review-agent
-        run: python3 main.py
+        run: python3 pr-review-agent/main.py
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
