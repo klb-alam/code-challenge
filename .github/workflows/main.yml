@@ -13,7 +13,11 @@ jobs:
         uses: actions/checkout@v3
 
       - name: List Workspace Contents
-        run: ls -R /github/workspace
+        run: |
+          pwd
+          ls -la
+          echo "Root contents:"
+          ls -R
 
       - name: Run PR Agent Review
         uses: klb-alam/pr-review-agent@main # Ensure this points to the correct branch
