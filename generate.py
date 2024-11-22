@@ -29,9 +29,6 @@ def main(filename: str) -> None:
     max_size: int = 1024 * 1024 * 10  # 10MB in bytes
     with open(filename, 'w') as f:
         while os.path.getsize(filename) < max_size:
-            f.write(generate_random_string(10) + ",")
-            f.write(str(generate_random_real()) + ",")
-            f.write(str(generate_random_integer()) + ",")
             f.write(generate_random_alphanumeric() + ",")
 
 if __name__ == "__main__":
