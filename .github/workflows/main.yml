@@ -23,6 +23,6 @@ jobs:
         uses: klb-alam/pr-review-agent@main # Ensure this points to the correct branch
         with:
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.FINE_GRAINED_TOKEN }}
           pr_number: 1
 
