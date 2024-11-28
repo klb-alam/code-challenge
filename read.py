@@ -25,12 +25,6 @@ def process_file(filename):
                 except ValueError:
                     if obj.isalnum():
                         print(f"Object: {obj}, Type: Alphanumeric")
-                    else:
-                        stripped_obj = obj.strip()
-                        if stripped_obj.isalnum():
-                            print(f"Object: {stripped_obj}, Type: Alphanumeric")
-                        else:
-                            print(f"Object: {obj}, Type: Alphabetical String")
 
 
 if __name__ == "__main__":
