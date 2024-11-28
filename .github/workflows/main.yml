@@ -12,13 +12,6 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: List Workspace Contents
-        run: |
-          pwd
-          ls -la
-          echo "Root contents:"
-          ls -R
-
       - name: Run PR Agent Review
         uses: klb-alam/pr-review-agent@main # Ensure this points to the correct branch
         with:
