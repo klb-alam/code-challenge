@@ -21,6 +21,6 @@ jobs:
       - name: Run PR Agent Review
         uses: klb-alam/pr-review-agent@main # Ensure this points to the correct branch
         with:
-          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
-          github_token: ${{ secrets.FINE_GRAINED_TOKEN }}
+          openai_api_key: ${{ vars.OPENAI_API_KEY }}
+          github_token: ${{ vars.FINE_GRAINED_TOKEN }}
           pr_number: ${{ github.event.pull_request.number }}
